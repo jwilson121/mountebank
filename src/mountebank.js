@@ -59,6 +59,7 @@ function create (options) {
             https: require('./models/https/httpsServer').initialize(options.allowInjection, options.mock, options.debug),
             soap: require('./models/soap/soapServer').initialize(options.allowInjection, options.mock, options.debug),
             smtp: require('./models/smtp/smtpServer').initialize(options.mock, options.debug),
+            ldap: require('./models/ldap/ldapServer').initialize(options.allowInjection, options.mock, options.debug),
             foo: require('./models/foo/fooServer').initialize(options.allowInjection, options.mock, options.debug)
         },
         logger = ScopedLogger.create(winston, util.format('[mb:%s] ', options.port)),
